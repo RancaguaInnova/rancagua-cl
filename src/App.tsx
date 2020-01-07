@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from 'react'
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 
 import Header from 'components/Header'
+import Tabs from 'components/Tabs'
 import Loading from 'components/Loading'
 
 import './App.css'
@@ -32,6 +33,7 @@ const App: React.FC = () => {
 						</Route>
 					</Switch>
 				</Suspense>
+				<Tabs />
 			</div>
 		</Router>
 	)

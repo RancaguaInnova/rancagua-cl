@@ -1,0 +1,6 @@
+.bottomBar {
+    height: 4rem; 
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
