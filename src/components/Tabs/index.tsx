@@ -1,16 +1,25 @@
 import React from 'react'
+import { Button, Row, Col } from 'antd'
 import './styles.css'
 
-const Tabs: React.FC = () => {
+interface TabsProps {
+	onHandleMenu: any
+}
+const Tabs: React.FC<TabsProps> = ({ onHandleMenu }) => {
 	return (
 		<div className="bottomBar">
-			<div className="row">
-				<div className="col">aaaaa</div>
-				<div className="col">bbbbb</div>
-				<div className="col">ccccc</div>
-				<div className="col">ccccc</div>
-				<div className="col">eeeee</div>
-			</div>
+			<Row>
+				<Col span={4}>col-4</Col>
+				<Col span={4}>col-4</Col>
+				<Col span={4}>col-4</Col>
+				<Col span={4}>col-4</Col>
+				<Col span={4}>col-4</Col>
+				<Col span={4}>
+					<Button onClick={onHandleMenu} type="link" block>
+						Menu
+					</Button>
+				</Col>
+			</Row>
 		</div>
 	)
 }
