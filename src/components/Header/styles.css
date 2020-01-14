@@ -1,0 +1,14 @@
+.header {
+  padding: 0 20;
+}
+.logo {
+  width: 150px;
+  height: 38px;
+  /* background-image: url("/assets/images/logo.png"); */
+  margin: 1px 1px 1px 0;
+  float: left;
+}
+/* 456x115 */
+.logo img {
+  width: 100%;
+}

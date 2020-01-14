@@ -1,0 +1,31 @@
+.bottomTabs {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #cb1e48;
+  color: white;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  height: 64px;
+}
+
+.icon-txt {
+  margin: 0;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.icon {
+  font-size: 24px;
+}
+
+.btn-box {
+  padding: 10px 0;
+  height: 64px;
+}
+
+.active {
+  background-color: red;
+}

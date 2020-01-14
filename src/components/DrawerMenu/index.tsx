@@ -2,18 +2,31 @@ import React from 'react'
 import { Drawer } from 'antd'
 import './styles.css'
 
-interface DrawerMenuProps {
-	onClose: any
-	visible: boolean
+export enum DrawerPlacement {
+  right = 'right',
+  top = 'top',
+  bottom = 'bottom',
+  left = 'left',
 }
-const DrawerMenu: React.FC<DrawerMenuProps> = ({ onClose, visible = false }) => {
-	return (
-		<Drawer title="Menú" placement="right" closable={true} onClose={onClose} visible={visible}>
-			<p>Some contents...</p>
-			<p>Some contents...</p>
-			<p>Some contents...</p>
-		</Drawer>
-	)
+
+export interface DrawerMenuProps {
+  onClose: any
+  visible: boolean
+  placement?: DrawerPlacement
+}
+
+const DrawerMenu: React.FC<DrawerMenuProps> = ({
+  onClose,
+  visible = false,
+  placement = 'right',
+}) => {
+  return (
+    <Drawer title='Menú' placement={placement} closable={true} onClose={onClose} visible={visible}>
+      <p>Some contents...</p>
+      <p>Some contents...</p>
+      <p>Some contents...</p>
+    </Drawer>
+  )
 }
 
 export default DrawerMenu
