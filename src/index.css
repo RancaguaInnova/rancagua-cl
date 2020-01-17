@@ -1,13 +1,32 @@
+@font-face {
+  font-family: 'Futura';
+  src: local('Futura'), url(/assets/fonts/Futura_Medium/Futura_Medium.woff) format('woff');
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Futura';
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.content {
+  margin: 74px 8px 0px;
+  padding: 8px;
+  background: #fff;
+  min-height: 280px;
+}
+
+.content-mobile {
+  margin: 74px 8px;
+  padding: 8px;
+  background: #fff;
+  min-height: 280px;
 }

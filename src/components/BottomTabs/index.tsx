@@ -1,44 +1,25 @@
 import React from 'react'
-import { Button, Row, Col, Layout, Icon } from 'antd'
+import { Row, Layout } from 'antd'
+import Tab from './tab'
 import './styles.css'
 
 const { Footer } = Layout
 
-interface BottomTabsProps {
+export interface BottomTabsProps {
   onHandleMenu: any
 }
+
 const BottomTabs: React.FC<BottomTabsProps> = ({ onHandleMenu }) => {
   return (
     <div>
       <Footer className='bottomTabs'>
         <Row>
-          <Col span={4} className='btn-box active'>
-            <Icon type='home' className='icon' />
-            <p className='icon-txt'>Home</p>
-          </Col>
-          <Col span={4} className='btn-box'>
-            <Icon type='audit' className='icon' />
-            <p className='icon-txt'>Trámites</p>
-          </Col>
-          <Col span={4} className='btn-box'>
-            <Icon type='container' className='icon' />
-            <p className='icon-txt'>Servicios</p>
-          </Col>
-          <Col span={4} className='btn-box'>
-            <Icon type='calendar' className='icon' />
-            <p className='icon-txt'>Eventos</p>
-          </Col>
-          <Col span={4} className='btn-box'>
-            <Icon type='read' className='icon' />
-            <p className='icon-txt'>Noticias</p>
-          </Col>
-          <Col span={4} className='btn-box'>
-            <Icon type='menu' className='icon' />
-            <p className='icon-txt'>Menu</p>
-            {/* <Button onClick={onHandleMenu} type='link' block>
-              Menu
-            </Button> */}
-          </Col>
+          <Tab icon='home' text='Home' />
+          <Tab icon='audit' text='Trámites' selected={true} />
+          <Tab icon='container' text='Servicios' />
+          <Tab icon='calendar' text='Eventos' />
+          <Tab icon='read' text='Noticias' />
+          <Tab icon='menu' text='Menu' onClick={onHandleMenu} />
         </Row>
       </Footer>
     </div>

@@ -1,26 +1,23 @@
 import React, { Suspense, lazy, useState } from 'react'
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 import { Layout } from 'antd'
+import { isMobile } from 'mobile-device-detect'
+
+// Shared Components
 import Header from 'components/Header'
 import BottomTabs from 'components/BottomTabs'
 import DrawerMenu from 'components/DrawerMenu'
 import Loading from 'components/Loading'
-import CSS from 'csstype'
+
 import './App.css'
 
 const { Content } = Layout
 
+// Pages
 const Home = lazy(() => import('pages/Home'))
 const Events = lazy(() => import('pages/Events'))
 const News = lazy(() => import('pages/News'))
 const Services = lazy(() => import('pages/Services'))
-
-const contentStyle: CSS.Properties = {
-  margin: '74px 8px',
-  padding: '8px',
-  background: '#fff',
-  minHeight: '280px',
-}
 
 const App: React.FC = () => {
   const [visible, setVisible] = useState(false)
@@ -28,9 +25,9 @@ const App: React.FC = () => {
     <Router>
       <div className='App'>
         <Layout>
-          <Header />
+          <Header isMobile={isMobile} />
           <Suspense fallback={<Loading />}>
-            <Content style={contentStyle}>
+            <Content className={`content${isMobile ? '-mobile' : ''}`}>
               <Switch>
                 <Route path='/' default>
                   <Home />
@@ -47,11 +44,14 @@ const App: React.FC = () => {
               </Switch>
             </Content>
           </Suspense>
-          <BottomTabs
-            onHandleMenu={() => {
-              setVisible(!visible)
-            }}
-          />
+
+          {isMobile && (
+            <BottomTabs
+              onHandleMenu={() => {
+                setVisible(!visible)
+              }}
+            />
+          )}
         </Layout>
       </div>
       <DrawerMenu
