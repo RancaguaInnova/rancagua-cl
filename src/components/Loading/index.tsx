@@ -1,8 +1,8 @@
 import React from 'react'
 import './styles.css'
 
-const Header: React.FC = () => {
-	return <div className='Header'>Hola soy el Header</div>
+const Loading: React.FC = () => {
+  return <div className='Loading'>Hola soy el Loading</div>
 }
 
-export default Header
+export default Loading
