@@ -1,15 +1,16 @@
-import React, { Suspense, lazy, useState } from 'react'
+import React, { Suspense, lazy, useState, useContext } from 'react'
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 import { Layout } from 'antd'
-import { isMobile } from 'mobile-device-detect'
+import MobileContextProvider from 'core/providers/contexts/isMobile'
+import { MobileContext } from 'core/providers/contexts/isMobile'
+
+import './App.css'
 
 // Shared Components
-import Header from 'components/Header'
 import BottomTabs from 'components/BottomTabs'
 import DrawerMenu from 'components/DrawerMenu'
 import Loading from 'components/Loading'
-
-import './App.css'
+import Header from 'components/Header'
 
 const { Content } = Layout
 
@@ -21,38 +22,41 @@ const Services = lazy(() => import('pages/Services'))
 
 const App: React.FC = () => {
   const [visible, setVisible] = useState(false)
+  const isMobile = useContext(MobileContext)
   return (
     <Router>
       <div className='App'>
-        <Layout>
-          <Header isMobile={isMobile} />
-          <Suspense fallback={<Loading />}>
-            <Content className={`content${isMobile ? '-mobile' : ''}`}>
-              <Switch>
-                <Route path='/' default>
-                  <Home />
-                </Route>
-                <Route path='/eventos'>
-                  <Events />
-                </Route>
-                <Route path='/noticias'>
-                  <News />
-                </Route>
-                <Route path='/servicios'>
-                  <Services />
-                </Route>
-              </Switch>
-            </Content>
-          </Suspense>
+        <Suspense fallback={<Loading />}>
+          <MobileContextProvider>
+            <Layout>
+              <Header isMobile={isMobile} />
+              <Content className={`content${isMobile ? '-mobile' : ''}`}>
+                <Switch>
+                  <Route path='/' default>
+                    <Home />
+                  </Route>
+                  <Route path='/eventos'>
+                    <Events />
+                  </Route>
+                  <Route path='/noticias'>
+                    <News />
+                  </Route>
+                  <Route path='/servicios'>
+                    <Services />
+                  </Route>
+                </Switch>
+              </Content>
 
-          {isMobile && (
-            <BottomTabs
-              onHandleMenu={() => {
-                setVisible(!visible)
-              }}
-            />
-          )}
-        </Layout>
+              {isMobile && (
+                <BottomTabs
+                  onHandleMenu={() => {
+                    setVisible(!visible)
+                  }}
+                />
+              )}
+            </Layout>
+          </MobileContextProvider>
+        </Suspense>
       </div>
       <DrawerMenu
         visible={visible}
