@@ -1,41 +1,34 @@
 {
-  "name": "rancagua-cl",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@types/jest": "24.0.23",
-    "@types/node": "12.12.11",
-    "@types/reach__router": "^1.2.6",
-    "@types/react": "16.9.11",
-    "@types/react-dom": "16.9.4",
-    "@types/react-router-dom": "^5.1.3",
-    "antd": "^3.26.6",
-    "mobile-device-detect": "^0.3.3",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.2.0",
-    "typescript": "3.7.2"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+    "name": "rancagua-cl",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@types/jest": "24.0.23",
+        "@types/node": "12.12.11",
+        "@types/reach__router": "^1.2.6",
+        "@types/react": "16.9.11",
+        "@types/react-dom": "16.9.4",
+        "@types/react-router-dom": "^5.1.3",
+        "antd": "^3.26.6",
+        "mobile-device-detect": "^0.3.3",
+        "react": "^16.12.0",
+        "react-dom": "^16.12.0",
+        "react-router-dom": "^5.1.2",
+        "react-scripts": "3.2.0",
+        "typescript": "3.7.2"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "tsc": "./node_modules/.bin/tsc --watch"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [ ">0.2%", "not dead", "not op_mini all" ],
+        "development": [ "last 1 chrome version", "last 1 firefox version", "last 1 safari version" ]
+    }
 }
