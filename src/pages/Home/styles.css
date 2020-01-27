@@ -1,0 +1,54 @@
+.status {
+  background-color: #e9ebee;
+}
+
+.ant-list-item-meta-title {
+  font-weight: bold;
+  color: #324995;
+}
+
+.ant-list-item-meta-title a {
+  font-weight: bold;
+  color: #324995;
+}
+
+.ant-list-grid .ant-col > .ant-list-item {
+  margin-bottom: 8px;
+}
+
+.ant-avatar {
+  height: 80px;
+  width: 80px;
+}
+
+.ant-list-item-meta-description {
+  color: black;
+  font-size: 0.7rem;
+  text-align: center;
+  padding: 0px 6px;
+}
+
+.warning-msg {
+  background-color: black;
+  color: #fbe44f;
+  padding-top: 4px;
+  margin: 0;
+  padding: 8px;
+  text-align: center;
+}
+
+.warning-msg h3 {
+  color: #fbe44f;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.warning-msg p {
+  margin-bottom: 0.2rem;
+  font-size: 0.7rem;
+}
+
+.warning-msg .detail {
+  color: white;
+  font-size: 0.7rem;
+}
