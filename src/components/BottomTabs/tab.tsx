@@ -14,9 +14,9 @@ const Tab: React.FC<TabProps> = ({ onClick, icon, text = '', selected = false, s
   return (
     <div>
       <Col span={span} className={`btn-box`}>
-        <button className={`tab-btn ${selected ? 'active' : ''}`} onClick={onClick}>
-          <Icon type={icon} className='icon' />
-          <p className='icon-txt'>{text}</p>
+        <button className={`tab-btn`} onClick={onClick}>
+          <Icon type={icon} className={`icon ${selected ? '' : 'inactive'}`} />
+          <p className={`icon-txt ${selected ? '' : 'inactive'}`}>{text}</p>
         </button>
       </Col>
     </div>
