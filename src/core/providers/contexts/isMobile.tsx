@@ -3,7 +3,7 @@ import { isMobile } from 'mobile-device-detect'
 
 export const MobileContext = createContext(isMobile)
 
-export interface MobileContextProps {
+type MobileContextProps = {
   children: React.ReactNode
 }
 
