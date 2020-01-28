@@ -1,8 +1,7 @@
 import React, { Suspense, lazy, useState, useContext } from 'react'
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 import { Layout } from 'antd'
-import MobileContextProvider from 'core/providers/contexts/isMobile'
-import { MobileContext } from 'core/providers/contexts/isMobile'
+import { MobileContextProvider, MobileContext } from 'core/providers/contexts/IsMobile'
 import dotenv from 'dotenv'
 
 import './App.css'

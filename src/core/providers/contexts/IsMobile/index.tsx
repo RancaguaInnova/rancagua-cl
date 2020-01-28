@@ -7,8 +7,6 @@ type MobileContextProps = {
   children: React.ReactNode
 }
 
-const MobileContextProvider: React.FC<MobileContextProps> = ({ children }) => (
+export const MobileContextProvider: React.FC<MobileContextProps> = ({ children }) => (
   <MobileContext.Provider value={isMobile}>{children}</MobileContext.Provider>
 )
-
-export default MobileContextProvider
