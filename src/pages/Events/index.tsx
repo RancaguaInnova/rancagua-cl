@@ -2,7 +2,11 @@ import React from 'react'
 import './styles.css'
 
 const Events: React.FC = () => {
-	return <div className='Events'>Hola soy Events</div>
+  return (
+    <div>
+      <section className='section'>{/* <Title>Eventos</Title> */}</section>
+    </div>
+  )
 }
 
 export default Events
