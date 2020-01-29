@@ -16,6 +16,9 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+.ant-layout {
+  background: #e9ebee;
+}
 
 .content {
   margin: 74px 8px 0px;
@@ -25,8 +28,12 @@ code {
 }
 
 .content-mobile {
-  margin: 74px 8px;
-  padding: 8px;
+  margin: 74px 0px;
+  padding: 0px;
   background: #fff;
   min-height: 280px;
+}
+
+.section {
+  padding: 0px 16px;
 }
