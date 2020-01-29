@@ -9,7 +9,7 @@ export interface TitleProps {
 }
 
 const Title: React.FC<TitleProps> = ({ children, color, txt, style = {} }) => {
-  const txtColor = color ? color : '#cb1e48'
+  const txtColor = color ? color : '#ED1847'
   return (
     <h1 className='title' style={{ ...style, color: txtColor }}>
       {txt ? txt : children}
