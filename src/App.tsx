@@ -1,8 +1,8 @@
 import React, { Suspense, lazy, useState, useContext } from 'react'
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 import { Layout } from 'antd'
-import MobileContextProvider from 'core/providers/contexts/isMobile'
-import { MobileContext } from 'core/providers/contexts/isMobile'
+import { MobileContextProvider, MobileContext } from 'core/providers/contexts/IsMobile'
+import dotenv from 'dotenv'
 
 import './App.css'
 
@@ -12,6 +12,8 @@ import DrawerMenu from 'components/DrawerMenu'
 import Loading from 'components/Loading'
 import Header from 'components/Header'
 
+dotenv.config()
+
 const { Content } = Layout
 
 // Pages
@@ -19,6 +21,7 @@ const Home = lazy(() => import('pages/Home'))
 const Events = lazy(() => import('pages/Events'))
 const News = lazy(() => import('pages/News'))
 const Services = lazy(() => import('pages/Services'))
+const Procedures = lazy(() => import('pages/Procedures'))
 
 const App: React.FC = () => {
   const [visible, setVisible] = useState(false)
@@ -32,9 +35,6 @@ const App: React.FC = () => {
               <Header isMobile={isMobile} />
               <Content className={`content${isMobile ? '-mobile' : ''}`}>
                 <Switch>
-                  <Route path='/' default>
-                    <Home />
-                  </Route>
                   <Route path='/eventos'>
                     <Events />
                   </Route>
@@ -43,6 +43,12 @@ const App: React.FC = () => {
                   </Route>
                   <Route path='/servicios'>
                     <Services />
+                  </Route>
+                  <Route path='/tramites'>
+                    <Procedures />
+                  </Route>
+                  <Route path='/' default>
+                    <Home />
                   </Route>
                 </Switch>
               </Content>
