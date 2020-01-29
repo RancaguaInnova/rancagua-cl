@@ -1,6 +1,6 @@
 import React from 'react'
 import './styles.css'
-import { List, Avatar } from 'antd'
+import { List, Avatar, Button } from 'antd'
 import Title from './../../components/Title'
 
 const Procedures: React.FC = () => {
@@ -52,6 +52,10 @@ const Procedures: React.FC = () => {
           </List.Item>
         )}
       />
+
+      <Button block className='btn-more'>
+        Ver todos los Trámites
+      </Button>
     </section>
   )
 }
