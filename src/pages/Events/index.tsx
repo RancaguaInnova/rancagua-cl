@@ -1,7 +1,7 @@
 import React from 'react'
 import Title from '../../components/Title'
 import MainEvent from './MainEvent'
-import './styles.module.css'
+import './styles.sass'
 
 const Events: React.FC = () => {
   return (

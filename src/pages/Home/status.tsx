@@ -2,7 +2,7 @@ import React from 'react'
 import { List, Avatar } from 'antd'
 import moment from 'moment'
 import 'moment/locale/es'
-import styles from './styles.module.css'
+import './styles.scss'
 
 import Title from './../../components/Title'
 
@@ -64,7 +64,7 @@ const Status: React.FC = () => {
 
   return (
     <div>
-      <section className={[styles.section, styles.status].join(' ')}>
+      <section className='section status'>
         <Title>{title}</Title>
         {/*  {cards.map(card => statusCard(card))} */}
         <List
@@ -84,10 +84,10 @@ const Status: React.FC = () => {
           )}
         />
       </section>
-      <div className={styles['warning-msg']}>
+      <div className='warning-msg'>
         <h3>{warningAlert.title}</h3>
         <p>{warningAlert.subtitle}</p>
-        <p className={styles.detail}>{warningAlert.detail}</p>
+        <p className='detail'>{warningAlert.detail}</p>
       </div>
     </div>
   )

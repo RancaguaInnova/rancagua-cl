@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './styles.module.css'
+import './styles.scss'
 import { List, Avatar, Button, Icon } from 'antd'
 import Title from './../../components/Title'
 
@@ -33,7 +33,7 @@ const Services: React.FC = () => {
   ]
 
   return (
-    <section className={styles.section}>
+    <section className='section'>
       <Title style={{ fontWeight: 'bold' }}>SERVICIOS</Title>
 
       <List

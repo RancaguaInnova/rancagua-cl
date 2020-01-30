@@ -5,11 +5,11 @@ import Services from './services'
 import Events from '../Events'
 import News from './news'
 import Contact from './contact'
-import styles from './styles.module.css'
+import './styles.scss'
 
 const Home: React.FC = () => {
   return (
-    <div className={[styles['page-content'], styles['home']].join(' ')}>
+    <div className='page-content home'>
       <Status />
       <Procedures />
       <Services />

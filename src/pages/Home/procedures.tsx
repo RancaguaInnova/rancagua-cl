@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './styles.module.css'
+import './styles.scss'
 import { List, Avatar, Button } from 'antd'
 import Title from './../../components/Title'
 
@@ -33,11 +33,11 @@ const Procedures: React.FC = () => {
   ]
 
   return (
-    <section className={[styles.section, styles.procedures].join(' ')}>
+    <section className='section procedures'>
       <Title style={{ fontWeight: 'bold' }}>TRÁMITES</Title>
 
       <List
-        className={styles['procedures-list']}
+        className='procedures-list'
         grid={{
           gutter: 16,
           xs: 1,
