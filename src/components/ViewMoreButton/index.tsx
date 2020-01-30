@@ -9,8 +9,8 @@ type Props = {
 const ViewMoreButton: React.FC<Props> = ({ text }) => {
   return (
     <div className={styles.container}>
-      <Button block type='default'>
-        {text}
+      <Button block type='default' className={styles.button}>
+        {text.toUpperCase()}
       </Button>
     </div>
   )
