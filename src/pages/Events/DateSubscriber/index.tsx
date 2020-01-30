@@ -30,7 +30,7 @@ const DateSubscriber: React.FC<Props> = ({ date, imageUrl, small }) => {
         {momentDate.month}
       </Col>
       <Col className={small ? styles.scheduleIconSmall : styles.scheduleIcon} span={24}>
-        <Icon type='schedule' theme='outlined' />
+        <Icon type={small ? 'calendar' : 'schedule'} theme='outlined' />
       </Col>
     </Row>
   )
