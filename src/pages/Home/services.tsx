@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './styles.module.css'
-
+import { List, Avatar, Button, Icon } from 'antd'
 import Title from './../../components/Title'
 
 const Services: React.FC = () => {
