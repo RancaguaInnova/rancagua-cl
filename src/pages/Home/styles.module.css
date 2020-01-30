@@ -57,12 +57,9 @@
 }
 
 /** PROCEDURES SECTION **/
-.procedures,
-.services {
+.procedures {
   background-color: #e9ebee;
   padding: 0;
-  padding-top: 10px;
-  border-top: 20px solid white;
   /* margin-left: 8px;
     margin-right: 8px; */
 }
@@ -70,16 +67,11 @@
 .procedures .ant-list-grid .ant-col > .ant-list-item {
   background-color: white;
   margin-bottom: 1rem;
-  padding: 10px 24px;
+  padding-left: 16px;
+  padding-right: 8px;
 }
 
-.services .ant-list-item {
-  background-color: white;
-  margin-bottom: 1rem;
-  padding: 10px 24px;
-}
-
-.btn-more {
-  background-color: black;
-  color: white;
+.events {
+  background-color: #e9ebee;
+  padding: 0;
 }
