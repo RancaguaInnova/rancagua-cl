@@ -1,5 +1,5 @@
 import React from 'react'
-import './styles.sass'
+import styles from './styles.module.sass'
 
 export interface TitleProps {
   children: any
@@ -9,7 +9,7 @@ export interface TitleProps {
 
 const Title: React.FC<TitleProps> = ({ children, txt, style = {} }) => {
   return (
-    <h1 className='title' style={{ ...style }}>
+    <h1 className={styles.title} style={{ ...style }}>
       {txt ? txt : children}
     </h1>
   )
