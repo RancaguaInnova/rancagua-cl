@@ -1,46 +1,50 @@
 import React from 'react'
 import './styles.sass'
-import { List, Avatar, Button, Icon } from 'antd'
-import Title from './../../components/Title'
+import { List, Avatar, Button } from 'antd'
+import Title from 'components/Title'
 
-const Services: React.FC = () => {
-  const services = [
+const Procedures: React.FC = () => {
+  const procedures = [
     {
-      title: 'MAPAS',
+      title: 'PAGOS',
       icon: '',
       link: '',
     },
     {
-      title: 'ORGANIZACIONES COMUNITARIAS',
+      title: 'PATENTES',
       icon: '',
       link: '',
     },
     {
-      title: 'DECRETOS MUNICIPALES',
+      title: 'LICENCIA DE CONDUCIR',
       icon: '',
       link: '',
     },
     {
-      title: 'TRANSPARENCIA',
+      title: 'SOLICITUDES',
       icon: '',
       link: '',
     },
     {
-      title: 'BOLSA DE EMPLEO',
+      title: 'CERTIFICADOS',
       icon: '',
       link: '',
     },
   ]
 
   return (
-    <section className='section'>
-      <Title style={{ fontWeight: 'bold' }}>SERVICIOS</Title>
+    <section className='section procedures'>
+      <Title style={{ fontWeight: 'bold' }}>TRÁMITES</Title>
 
       <List
-        className='services-list'
-        dataSource={services}
+        className='procedures-list'
+        grid={{
+          gutter: 16,
+          xs: 1,
+        }}
+        dataSource={procedures}
         renderItem={item => (
-          <List.Item actions={[<Icon type='right' />]}>
+          <List.Item>
             <List.Item.Meta
               avatar={<Avatar src={item.icon} />}
               title={<a href={item.link}>{item.title}</a>}
@@ -48,11 +52,12 @@ const Services: React.FC = () => {
           </List.Item>
         )}
       />
+
       <Button block className='btn-more'>
-        Ver todos los Servicios
+        Ver todos los Trámites
       </Button>
     </section>
   )
 }
 
-export default Services
+export default Procedures

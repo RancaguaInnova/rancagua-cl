@@ -4,7 +4,7 @@ import moment from 'moment'
 import 'moment/locale/es'
 import './styles.sass'
 
-import Title from './../../components/Title'
+import Title from 'components/Title'
 
 const Status: React.FC = () => {
   const title = (

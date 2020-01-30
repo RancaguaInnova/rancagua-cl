@@ -1,7 +1,7 @@
 import React from 'react'
 import './styles.sass'
 
-import Title from './../../components/Title'
+import Title from 'components/Title'
 const News: React.FC = () => {
   return (
     <div>

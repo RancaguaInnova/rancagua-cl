@@ -1,10 +1,10 @@
 import React from 'react'
-import Status from './status'
-import Procedures from './procedures'
-import Services from './services'
+import Status from './Status'
+import Procedures from './Procedures'
+import Services from './Services'
 import Events from '../Events'
-import News from './news'
-import Contact from './contact'
+import News from './News'
+import Contact from './Contact'
 import './styles.sass'
 
 const Home: React.FC = () => {
