@@ -1,5 +1,5 @@
 import React from 'react'
-import './styles.css'
+import './styles.module.css'
 import { List, Avatar } from 'antd'
 import Title from './../../components/Title'
 
