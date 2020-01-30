@@ -2,6 +2,7 @@ import React from 'react'
 import Title from '../../components/Title'
 import MainEvent from './MainEvent'
 import SecondaryEvent from './SecondaryEvent'
+import ViewMoreButton from '../../components/ViewMoreButton'
 import styles from './styles.module.sass'
 
 const secondaryEvents = [
@@ -20,6 +21,7 @@ const Events: React.FC = () => {
       {secondaryEvents.map(event => (
         <SecondaryEvent date={event.date} title={event.title} />
       ))}
+      <ViewMoreButton text='Ver todos los eventos' />
     </section>
   )
 }
