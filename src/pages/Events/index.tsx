@@ -7,15 +7,7 @@ const Events: React.FC = () => {
   return (
     <div>
       <section className={styles.events}>
-        <Title
-          style={{
-            fontWeight: 'bold',
-            paddingTop: '1rem',
-            paddingBottom: '1rem',
-          }}
-        >
-          EVENTOS
-        </Title>
+        <Title>EVENTOS</Title>
         <MainEvent
           date='2020-02-12'
           title='Taller de Teoría y Solfeo'

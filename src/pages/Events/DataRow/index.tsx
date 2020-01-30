@@ -1,5 +1,6 @@
 import React from 'react'
 import { Row, Col, Icon, Typography } from 'antd'
+import styles from './styles.module.sass'
 
 const { Text } = Typography
 
@@ -11,7 +12,7 @@ type Props = {
 
 const DataRow: React.FC<Props> = ({ icon, theme, text }) => {
   return (
-    <Row>
+    <Row className={styles.container}>
       <Col xs={3}>
         <Icon type={icon} theme={theme} />
       </Col>

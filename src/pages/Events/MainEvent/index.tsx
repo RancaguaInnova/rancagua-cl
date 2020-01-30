@@ -5,7 +5,7 @@ import DataRow from '../DataRow'
 import DateSubscriber from '../DateSubscriber'
 import styles from './styles.module.sass'
 
-const { Title, Text } = Typography
+const { Title } = Typography
 
 type Props = {
   date: string
@@ -19,7 +19,7 @@ const MainEvent: React.FC<Props> = ({ date, title, imageUrl }) => {
       <Col xs={5}>
         <DateSubscriber date={date} imageUrl={imageUrl} />
       </Col>
-      <Col xs={18} className={styles.mainData}>
+      <Col xs={17} className={styles.mainData}>
         <Title level={3} className={styles.eventTitle}>
           {title}
         </Title>
@@ -27,7 +27,7 @@ const MainEvent: React.FC<Props> = ({ date, title, imageUrl }) => {
         <DataRow icon='clock-circle' theme='outlined' text='19:00 a 21:00' />
         <DataRow icon='dollar' theme='outlined' text='Gratuito' />
       </Col>
-      <Col xs={1} className={styles.arrow}>
+      <Col xs={2} className={styles.arrow}>
         <Icon type='right' theme='outlined' />
       </Col>
     </Row>
