@@ -1,11 +1,11 @@
 import React from 'react'
-import './styles.module.css'
+import styles from './styles.module.css'
 
 import Title from './../../components/Title'
 
 const Services: React.FC = () => {
   return (
-    <section className='section'>
+    <section className={styles.section}>
       <Title style={{ fontWeight: 'bold' }}>SERVICIOS</Title>
     </section>
   )

@@ -1,11 +1,11 @@
 import React from 'react'
-import './styles.module.css'
+import styles from './styles.module.css'
 
 import Title from './../../components/Title'
 const News: React.FC = () => {
   return (
     <div>
-      <section className='section procedures'>
+      <section className={[styles.section, styles.procedures].join(' ')}>
         <Title style={{ fontWeight: 'bold' }}>NOTICIAS</Title>
       </section>
     </div>

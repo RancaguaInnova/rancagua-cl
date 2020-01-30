@@ -2,7 +2,7 @@ import React from 'react'
 import { Row, Col } from 'antd'
 import { Typography } from 'antd'
 import DataRow from '../DataRow'
-import './styles.module.css'
+import styles from './styles.module.css'
 
 const { Title, Text } = Typography
 
@@ -12,7 +12,7 @@ const MainEvent: React.FC = (props: any) => {
       <Col xs={8}>Fecha</Col>
       <Col xs={12} className='main-data'>
         <Row>
-          <Title level={4} className='title'>
+          <Title level={4} className={styles.eventTitle}>
             Taller de Teoría y Solfeo
           </Title>
         </Row>

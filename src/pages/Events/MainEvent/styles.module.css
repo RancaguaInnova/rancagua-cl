@@ -6,7 +6,7 @@
 .main-data {
 }
 
-.container .title {
-  color: #324995;
+.eventTitle {
+  color: #324995 !important;
   text-align: left;
 }
