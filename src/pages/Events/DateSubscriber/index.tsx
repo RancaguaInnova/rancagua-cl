@@ -5,10 +5,11 @@ import moment from 'moment'
 
 type Props = {
   date: string
-  imageUrl: string
+  imageUrl?: string
+  small: boolean
 }
 
-const DateSubscriber: React.FC<Props> = ({ date, imageUrl }) => {
+const DateSubscriber: React.FC<Props> = ({ date, imageUrl, small }) => {
   const [momentDate, setMomentDate] = useState(() => {
     const momented = moment(date)
     return {
@@ -22,13 +23,13 @@ const DateSubscriber: React.FC<Props> = ({ date, imageUrl }) => {
 
   return (
     <Row className={styles.container} align='middle'>
-      <Col className={styles.day} span={24}>
+      <Col className={small ? styles.daySmall : styles.day} span={24}>
         {momentDate.day}
       </Col>
-      <Col className={styles.month} span={24}>
+      <Col className={small ? styles.monthSmall : styles.month} span={24}>
         {momentDate.month}
       </Col>
-      <Col className={styles.scheduleIcon} span={24}>
+      <Col className={small ? styles.scheduleIconSmall : styles.scheduleIcon} span={24}>
         <Icon type='schedule' theme='outlined' />
       </Col>
     </Row>
