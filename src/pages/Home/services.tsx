@@ -1,5 +1,5 @@
 import React from 'react'
-import './styles.scss'
+import './styles.sass'
 import { List, Avatar, Button, Icon } from 'antd'
 import Title from './../../components/Title'
 

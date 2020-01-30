@@ -1,5 +1,5 @@
 import React from 'react'
-import './styles.scss'
+import './styles.sass'
 
 const Contact: React.FC = () => {
   return <section>main Contact</section>

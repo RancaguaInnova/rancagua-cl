@@ -2,7 +2,7 @@ import React from 'react'
 import { List, Avatar } from 'antd'
 import moment from 'moment'
 import 'moment/locale/es'
-import './styles.scss'
+import './styles.sass'
 
 import Title from './../../components/Title'
 

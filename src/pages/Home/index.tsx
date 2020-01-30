@@ -5,7 +5,7 @@ import Services from './services'
 import Events from '../Events'
 import News from './news'
 import Contact from './contact'
-import './styles.scss'
+import './styles.sass'
 
 const Home: React.FC = () => {
   return (

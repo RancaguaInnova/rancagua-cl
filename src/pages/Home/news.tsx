@@ -1,5 +1,5 @@
 import React from 'react'
-import './styles.scss'
+import './styles.sass'
 
 import Title from './../../components/Title'
 const News: React.FC = () => {
