@@ -1,17 +1,15 @@
 import React from 'react'
-import './styles.css'
+import './styles.sass'
 
 export interface TitleProps {
   children: any
   txt?: string
-  color?: string
   style?: any
 }
 
-const Title: React.FC<TitleProps> = ({ children, color, txt, style = {} }) => {
-  const txtColor = color ? color : '#ED1847'
+const Title: React.FC<TitleProps> = ({ children, txt, style = {} }) => {
   return (
-    <h1 className='title' style={{ ...style, color: txtColor }}>
+    <h1 className='title' style={{ ...style }}>
       {txt ? txt : children}
     </h1>
   )
