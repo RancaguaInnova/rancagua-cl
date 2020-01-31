@@ -17,6 +17,7 @@ const Events: React.FC = () => {
         date='2020-02-12'
         title='Taller de Teoría y Solfeo'
         imageUrl='https://promocionmusical.es/wp-content/uploads/2018/12/que-es-una-partitura.jpg'
+        color='#4DACE9'
       />
       {secondaryEvents.map(event => (
         <SecondaryEvent date={event.date} title={event.title} />
