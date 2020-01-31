@@ -11,17 +11,15 @@ const { Title } = Typography
 type Props = {
   date: string
   title: string
-  imageUrl: string
-  color?: string
 }
 
-const MainEvent: React.FC<Props> = ({ date, title, imageUrl, color }) => {
+const MainEvent: React.FC<Props> = ({ date, title }) => {
   return (
     <Row className={styles.container}>
-      <Col xs={5}>
-        <DateSubscriber date={date} imageUrl={imageUrl} small={false} color={color} />
+      <Col xs={4}>
+        <DateSubscriber date={date} small />
       </Col>
-      <Col xs={17} className={styles.mainData}>
+      <Col xs={18} className={styles.mainData}>
         <Title level={3} className={styles.eventTitle}>
           {title}
         </Title>

@@ -1,14 +1,23 @@
 import React from 'react'
-import { Row, Col, Typography } from 'antd'
+import { Row, Col, Icon, Typography } from 'antd'
+import styles from './styles.module.sass'
 
 const { Text } = Typography
 
-const DataRow: React.FC = (props: any) => {
+type Props = {
+  icon: string
+  theme: 'filled' | 'outlined' | 'twoTone'
+  text: string
+}
+
+const DataRow: React.FC<Props> = ({ icon, theme, text }) => {
   return (
-    <Row>
-      <Col span={5}>Icon</Col>
-      <Col span={19}>
-        <Text strong>Centro Cultural Baquedano</Text>
+    <Row className={styles.container}>
+      <Col xs={3}>
+        <Icon type={icon} theme={theme} />
+      </Col>
+      <Col xs={19}>
+        <Text strong>{text}</Text>
       </Col>
     </Row>
   )
