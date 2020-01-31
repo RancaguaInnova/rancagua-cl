@@ -2,6 +2,7 @@ import React from 'react'
 import './styles.sass'
 import { List, Avatar, Button, Icon } from 'antd'
 import Title from 'components/Title'
+import ViewMoreButton from 'components/ViewMoreButton'
 
 const Services: React.FC = () => {
   const services = [
@@ -48,9 +49,8 @@ const Services: React.FC = () => {
           </List.Item>
         )}
       />
-      <Button block className='btn-more'>
-        Ver todos los Servicios
-      </Button>
+
+      <ViewMoreButton text='Ver todos los Servicios' />
     </section>
   )
 }

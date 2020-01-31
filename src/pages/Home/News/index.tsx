@@ -3,6 +3,7 @@ import './styles.sass'
 
 import { List, Avatar, Button, Icon } from 'antd'
 import Title from 'components/Title'
+import ViewMoreButton from 'components/ViewMoreButton'
 const News: React.FC = () => {
   const news: any[] = [
     {
@@ -38,9 +39,7 @@ const News: React.FC = () => {
           </List.Item>
         )}
       />
-      <Button block className='btn-more'>
-        Ver todas las noticias
-      </Button>
+      <ViewMoreButton text='Ver todas las noticias' />
     </section>
   )
 }
