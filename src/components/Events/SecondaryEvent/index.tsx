@@ -39,7 +39,7 @@ const MainEvent: React.FC<Props> = ({ event }) => {
         <DataRow icon='clock-circle' theme='outlined' text='19:00 a 21:00' />
         <DataRow icon='dollar' theme='outlined' text='Gratuito' />
       </Col>
-      <RightArrow />
+      <RightArrow small />
     </Row>
   )
 }

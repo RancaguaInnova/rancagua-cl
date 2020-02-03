@@ -36,7 +36,9 @@ const Events: React.FC = () => {
       {secondaryEvents.map(event => (
         <SecondaryEvent event={event} />
       ))}
-      <ViewMoreButton text='Ver todos los eventos' />
+      <div className={styles.viewMore}>
+        <ViewMoreButton text='Ver todos los eventos' />
+      </div>
     </section>
   )
 }
