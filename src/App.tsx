@@ -4,7 +4,7 @@ import { Layout } from 'antd'
 import { MobileContextProvider, MobileContext } from 'core/providers/contexts/IsMobile'
 import dotenv from 'dotenv'
 
-import './App.css'
+import './App.sass'
 
 // Shared Components
 import BottomTabs from 'components/BottomTabs'
