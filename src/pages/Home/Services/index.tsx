@@ -34,7 +34,7 @@ const Services: React.FC = () => {
   ]
 
   return (
-    <section className='section'>
+    <section className='section services'>
       <Title>SERVICIOS</Title>
 
       <List
