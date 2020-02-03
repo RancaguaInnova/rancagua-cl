@@ -4,7 +4,7 @@ import styles from './styles.module.sass'
 
 const RightArrow: React.FC = () => (
   <Col xs={2} className={styles.arrow}>
-    <Icon type='right' theme='outlined' />
+    <Icon type='right' theme='outlined' className={styles.arrow} />
   </Col>
 )
 
