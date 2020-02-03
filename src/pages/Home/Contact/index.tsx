@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row, Col } from 'antd'
+import { Row, Col, Icon } from 'antd'
 import Title from 'components/Title'
 import './styles.sass'
 
@@ -9,9 +9,15 @@ const Contact: React.FC = () => {
       <Title style={{ fontWeight: 'bold' }}>CONTACTO</Title>
       <div>
         <Row className='primaryRow row'>
-          <Col span={8}>logo_youtube</Col>
-          <Col span={8}>logo_twitter</Col>
-          <Col span={8}>logo_facebook</Col>
+          <Col span={8}>
+            <Icon type='youtube' className='icon' />
+          </Col>
+          <Col span={8}>
+            <Icon type='twitter' className='icon' />
+          </Col>
+          <Col span={8}>
+            <Icon type='facebook' className='icon' />
+          </Col>
         </Row>
         <Row className='secondaryRow row' style={{ lineHeight: 0.7 }}>
           <Col span={8}>icon</Col>
