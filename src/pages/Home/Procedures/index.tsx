@@ -1,7 +1,8 @@
 import React from 'react'
-import './styles.css'
+import './styles.sass'
 import { List, Avatar } from 'antd'
-import Title from './../../components/Title'
+import Title from 'components/Title'
+import ViewMoreButton from 'components/ViewMoreButton'
 
 const Procedures: React.FC = () => {
   const procedures = [
@@ -52,6 +53,7 @@ const Procedures: React.FC = () => {
           </List.Item>
         )}
       />
+      <ViewMoreButton text='Ver todos los Trámites' />
     </section>
   )
 }

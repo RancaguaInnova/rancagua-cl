@@ -2,9 +2,9 @@ import React from 'react'
 import { List, Avatar } from 'antd'
 import moment from 'moment'
 import 'moment/locale/es'
-import './styles.css'
+import './styles.sass'
 
-import Title from './../../components/Title'
+import Title from 'components/Title'
 
 const Status: React.FC = () => {
   const title = (
@@ -59,8 +59,6 @@ const Status: React.FC = () => {
     detail: 'Para mas información favor contactar al fono +56 9 5665454',
     link: '',
   }
-
-  const statusCard = (val: any) => <div> aca el val del card</div>
 
   return (
     <div>
