@@ -21,10 +21,10 @@ const MainEvent: React.FC<Props> = ({ event }) => {
   const { date, imageUrl, color, title } = event
   return (
     <Row className={styles.container}>
-      <Col xs={5}>
+      <Col xs={6}>
         <DateSubscriber date={date} imageUrl={imageUrl} small={false} color={color} />
       </Col>
-      <Col xs={17} className={styles.mainData}>
+      <Col xs={15} className={styles.mainData}>
         <Title level={3} className={styles.eventTitle}>
           {title}
         </Title>

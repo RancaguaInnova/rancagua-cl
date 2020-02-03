@@ -1,0 +1,48 @@
+.gridContainer {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 1rem;
+  background-color: #fff;
+  text-align: left;
+  // border-radius: 0.5rem;
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+  grid-template-columns: 1.5fr 4fr 0.1fr;
+  grid-template-areas:
+    'date  title  title'
+    'date  data   arrow';
+}
+
+.dateContainer {
+  grid-area: date;
+  display: grid;
+  border-right: 1px dashed gray;
+}
+
+.title {
+  grid-area: title;
+  color: #324995;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  padding-left: 0.5rem;
+}
+
+.data {
+  grid-area: data;
+  background: #f3f;
+  padding-left: 0.5rem;
+}
+
+.arrowContainer {
+  grid-area: arrow;
+  display: grid;
+  align-items: initial;
+  justify-items: center;
+  // background: #f0f0f0;
+}
+
+.arrow {
+  font-size: 2rem;
+  opacity: 0.4;
+  padding-top: 1rem;
+}
