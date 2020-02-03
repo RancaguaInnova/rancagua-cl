@@ -9,17 +9,22 @@ import styles from './styles.module.sass'
 const { Title } = Typography
 
 type Props = {
-  date: string
-  title: string
+  event: {
+    date: string
+    title: string
+    imageUrl: string
+    color?: string
+  }
 }
 
-const MainEvent: React.FC<Props> = ({ date, title }) => {
+const MainEvent: React.FC<Props> = ({ event }) => {
+  const { date, imageUrl, color, title } = event
   return (
     <Row className={styles.container}>
-      <Col xs={4}>
-        <DateSubscriber date={date} small />
+      <Col xs={6}>
+        <DateSubscriber date={date} imageUrl={imageUrl} small={false} color={color} />
       </Col>
-      <Col xs={18} className={styles.mainData}>
+      <Col xs={16} className={styles.mainData}>
         <Title level={3} className={styles.eventTitle}>
           {title}
         </Title>

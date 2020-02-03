@@ -13,10 +13,10 @@ type Props = {
 const DataRow: React.FC<Props> = ({ icon, theme, text }) => {
   return (
     <Row className={styles.container}>
-      <Col xs={3}>
+      <Col xs={2}>
         <Icon type={icon} theme={theme} />
       </Col>
-      <Col xs={19}>
+      <Col xs={20}>
         <Text strong>{text}</Text>
       </Col>
     </Row>
