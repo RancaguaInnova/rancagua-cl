@@ -23,16 +23,16 @@ const DateSubscriber: React.FC<Props> = ({ date, imageUrl, small, color }) => {
   })
 
   return (
-    <Row className={styles.container} style={color ? { color } : {}} align='middle'>
+    <Row className={styles.container} align='middle'>
       <Col className={small ? styles.daySmall : styles.day} span={24}>
         {momentDate.day}
       </Col>
       <Col className={small ? styles.monthSmall : styles.month} span={24}>
         {momentDate.month}
       </Col>
-      {/* <Col className={small ? styles.scheduleIconSmall : styles.scheduleIcon} span={24}>
+      <Col className={small ? styles.scheduleIconSmall : styles.scheduleIcon} span={24}>
         <Icon type={small ? 'calendar' : 'schedule'} theme='outlined' />
-      </Col> */}
+      </Col>
     </Row>
   )
 }
