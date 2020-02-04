@@ -1,7 +1,8 @@
 import React from 'react'
 import './styles.sass'
-import { List, Avatar, Button } from 'antd'
+import { List, Avatar, Icon } from 'antd'
 import Title from 'components/Title'
+import ViewMoreButton from 'components/ViewMoreButton'
 
 const Procedures: React.FC = () => {
   const procedures = [
@@ -38,13 +39,9 @@ const Procedures: React.FC = () => {
 
       <List
         className='procedures-list'
-        grid={{
-          gutter: 16,
-          xs: 1,
-        }}
         dataSource={procedures}
         renderItem={item => (
-          <List.Item>
+          <List.Item actions={[<Icon type='right' />]}>
             <List.Item.Meta
               avatar={<Avatar src={item.icon} />}
               title={<a href={item.link}>{item.title}</a>}
@@ -52,10 +49,7 @@ const Procedures: React.FC = () => {
           </List.Item>
         )}
       />
-
-      <Button block className='btn-more'>
-        Ver todos los Trámites
-      </Button>
+      <ViewMoreButton text='Ver todos los Trámites' />
     </section>
   )
 }

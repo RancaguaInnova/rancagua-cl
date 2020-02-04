@@ -4,37 +4,45 @@ import MainNews from '../../../components/News/MainNews'
 import SecondaryNews from '../../../components/News/SecondaryNews'
 import ViewMoreButton from '../../../components/ViewMoreButton'
 import styles from './styles.module.sass'
-
-const mainNews = {
-  publishedAt: '2020-02-12',
-  title: 'Taller de Teoría y Solfeo',
-  imageUrl: 'https://promocionmusical.es/wp-content/uploads/2018/12/que-es-una-partitura.jpg',
-  body:
-    'Este mes de febrero se da inicio al vegésimo séptimo taller de teoría musical y solfeo. Aprende todo lo necesario',
-}
-
-const secondaryNews = [
-  {
-    publishedAt: '2020-02-01',
-    title: 'Taller "Cultivando Nuestro Patrimonio Natural',
-  },
-  {
-    publishedAt: '2020-03-08',
-    title: 'Tercera Corrida Familiar',
-  },
-]
+import { List, Icon } from 'antd'
 
 const News: React.FC = () => {
+  const news: any[] = [
+    {
+      title: 'Noticia 1',
+      description: 'Acá la descripción de la noticia',
+      link: '',
+      image: 'https://rancagua.cl/plataforma/upload/fotos/389785d677ac78a18cedff122c8ec816.jpg',
+    },
+    {
+      title: 'Noticia 2',
+      description: 'Acá la descripción de la noticia',
+      link: '',
+      image: 'https://rancagua.cl/plataforma/upload/fotos/389785d677ac78a18cedff122c8ec816.jpg',
+    },
+  ]
+
   return (
-    <section className={styles.news}>
-      <Title>NOTICIAS</Title>
-      <MainNews news={mainNews} />
-      {secondaryNews.map(News => (
-        <SecondaryNews news={News} />
-      ))}
-      <div className={styles.viewMore}>
-        <ViewMoreButton text='Ver todas las noticias' />
-      </div>
+    <section className='section'>
+      <Title style={{ fontWeight: 'bold' }}>NOTICIAS</Title>
+      <img
+        className='newsImg'
+        src='https://rancagua.cl/plataforma/upload/fotos/389785d677ac78a18cedff122c8ec816.jpg'
+        alt={news[0].title}
+      />
+      <List
+        className='news-list'
+        dataSource={news}
+        renderItem={item => (
+          <List.Item actions={[<Icon type='right' />]}>
+            <List.Item.Meta
+              title={<a href={item.link}>{item.title}</a>}
+              description={item.description}
+            />
+          </List.Item>
+        )}
+      />
+      <ViewMoreButton text='Ver todas las noticias' />
     </section>
   )
 }

@@ -60,8 +60,6 @@ const Status: React.FC = () => {
     link: '',
   }
 
-  const statusCard = (val: any) => <div> aca el val del card</div>
-
   return (
     <div>
       <section className='section status'>
