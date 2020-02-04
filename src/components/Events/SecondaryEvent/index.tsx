@@ -41,7 +41,7 @@ const SecondaryEvent: React.FC<Props> = ({ event }) => {
         <DataRow icon='clock-circle' theme='outlined' text='19:00 a 21:00' />
         <DataRow icon='dollar' theme='outlined' text={isFree ? 'Gratuito' : 'Pagado'} />
       </Col>
-      <RightArrow small />
+      {/* <RightArrow small /> */}
     </Row>
   )
 }

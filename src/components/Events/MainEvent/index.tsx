@@ -12,6 +12,7 @@ type Props = {
   event: {
     date: string
     title: string
+    description: string
     imageUrl?: string
     address: {
       streetName: string
