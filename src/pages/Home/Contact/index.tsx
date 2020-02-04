@@ -39,9 +39,19 @@ const Contact: React.FC = () => {
           </Col>
         </Row>
         <Row className='defaultRow row'>
-          <Col span={8}>logo_rancagua</Col>
-          <Col span={8}>logo_cert</Col>
-          <Col span={8}>app_store</Col>
+          <Col span={8}>
+            <Avatar shape='square' size='large' src='/assets/images/icons/rancagua-circle.png' />
+          </Col>
+          <Col span={8}>
+            <Avatar
+              shape='square'
+              size='large'
+              src='/assets/images/icons/certification-circle.png'
+            />
+          </Col>
+          <Col span={8}>
+            <Avatar shape='square' size='large' src='/assets/images/icons/store-circle.png' />
+          </Col>
         </Row>
       </div>
     </section>
