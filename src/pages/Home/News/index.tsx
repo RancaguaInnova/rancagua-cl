@@ -1,7 +1,5 @@
 import React from 'react'
 import Title from '../../../components/Title'
-import MainNews from '../../../components/News/MainNews'
-import SecondaryNews from '../../../components/News/SecondaryNews'
 import ViewMoreButton from '../../../components/ViewMoreButton'
 import styles from './styles.module.sass'
 import { List, Icon } from 'antd'
