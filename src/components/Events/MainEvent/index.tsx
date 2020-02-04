@@ -12,25 +12,33 @@ type Props = {
   event: {
     date: string
     title: string
-    imageUrl: string
-    color?: string
+    imageUrl?: string
+    address: {
+      streetName: string
+      streetNumber: string
+    }
+    isFree: boolean
   }
 }
 
 const MainEvent: React.FC<Props> = ({ event }) => {
-  const { date, imageUrl, color, title } = event
+  const {
+    date,
+    imageUrl,
+    title,
+    address: { streetName, streetNumber },
+  } = event
   return (
     <Row className={styles.container}>
       <Col xs={6}>
-        <DateSubscriber date={date} imageUrl={imageUrl} small={false} color={color} />
+        <DateSubscriber date={date} imageUrl={imageUrl} small={false} />
       </Col>
       <Col xs={16} className={styles.mainData}>
         <Title level={3} className={styles.eventTitle}>
           {title}
         </Title>
-        <DataRow icon='environment' theme='outlined' text='Centro Cultural Baquedano' />
-        <DataRow icon='clock-circle' theme='outlined' text='19:00 a 21:00' />
-        <DataRow icon='dollar' theme='outlined' text='Gratuito' />
+        <DataRow icon='environment' theme='outlined' text={streetName} />
+        <DataRow icon='dollar' theme='outlined' text={streetNumber} />
       </Col>
       <RightArrow />
     </Row>

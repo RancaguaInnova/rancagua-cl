@@ -16,14 +16,16 @@ type Props = {
       streetName: string
       streetNumber: string
     }
+    isFree: boolean
   }
 }
 
-const MainEvent: React.FC<Props> = ({ event }) => {
+const SecondaryEvent: React.FC<Props> = ({ event }) => {
   const {
     date,
     title,
     address: { streetName, streetNumber },
+    isFree,
   } = event
 
   return (
@@ -37,11 +39,11 @@ const MainEvent: React.FC<Props> = ({ event }) => {
         </Title>
         <DataRow icon='environment' theme='outlined' text={`${streetName}, ${streetNumber}`} />
         <DataRow icon='clock-circle' theme='outlined' text='19:00 a 21:00' />
-        <DataRow icon='dollar' theme='outlined' text='Gratuito' />
+        <DataRow icon='dollar' theme='outlined' text={isFree ? 'Gratuito' : 'Pagado'} />
       </Col>
       <RightArrow small />
     </Row>
   )
 }
 
-export default MainEvent
+export default SecondaryEvent
