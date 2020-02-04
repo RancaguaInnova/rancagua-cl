@@ -5,30 +5,31 @@ import Title from 'components/Title'
 import ViewMoreButton from 'components/ViewMoreButton'
 
 const Services: React.FC = () => {
+  const iconUrl = '/assets/images/icons/'
   const services = [
     {
       title: 'MAPAS',
-      icon: '',
+      icon: `${iconUrl}map.png`,
       link: '',
     },
     {
       title: 'ORGANIZACIONES COMUNITARIAS',
-      icon: '',
+      icon: `${iconUrl}comunity.png`,
       link: '',
     },
     {
       title: 'DECRETOS MUNICIPALES',
-      icon: '',
+      icon: `${iconUrl}document.png`,
       link: '',
     },
     {
       title: 'TRANSPARENCIA',
-      icon: '',
+      icon: `${iconUrl}book.png`,
       link: '',
     },
     {
       title: 'BOLSA DE EMPLEO',
-      icon: '',
+      icon: `${iconUrl}student.png`,
       link: '',
     },
   ]

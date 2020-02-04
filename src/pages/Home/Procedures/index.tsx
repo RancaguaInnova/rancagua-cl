@@ -5,30 +5,31 @@ import Title from 'components/Title'
 import ViewMoreButton from 'components/ViewMoreButton'
 
 const Procedures: React.FC = () => {
+  const iconUrl = '/assets/images/icons/'
   const procedures = [
     {
       title: 'PAGOS',
-      icon: '',
+      icon: `${iconUrl}pay.png`,
       link: '',
     },
     {
       title: 'PATENTES',
-      icon: '',
+      icon: `${iconUrl}plate.png`,
       link: '',
     },
     {
       title: 'LICENCIA DE CONDUCIR',
-      icon: '',
+      icon: `${iconUrl}car.png`,
       link: '',
     },
     {
       title: 'SOLICITUDES',
-      icon: '',
+      icon: `${iconUrl}requests.png`,
       link: '',
     },
     {
       title: 'CERTIFICADOS',
-      icon: '',
+      icon: `${iconUrl}document.png`,
       link: '',
     },
   ]

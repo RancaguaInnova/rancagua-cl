@@ -19,24 +19,25 @@ const Status: React.FC = () => {
         .toUpperCase()}
     </div>
   )
+  const iconUrl = '/assets/images/icons/'
 
   const cards = [
     {
-      icon: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+      icon: `${iconUrl}garbage-collector.png`,
       title: 'BASURA',
       description: 'Los camiones de basura se encuentran con un funcionamiento normal',
       warning: false,
       link: '',
     },
     {
-      icon: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+      icon: `${iconUrl}traffic.png`,
       title: 'SEMÁFOROS',
       description: 'Algunos semáforos se encuentran con problemas',
       warning: false,
       link: '',
     },
     {
-      icon: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+      icon: `${iconUrl}public-buildings.png`,
       title: 'EDIFICIOS PÚBLICOS',
       description:
         'Todos los edificios municipales se encuentran abiertos en los horarios normales de funcionamiento',
@@ -44,7 +45,7 @@ const Status: React.FC = () => {
       link: '',
     },
     {
-      icon: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+      icon: `${iconUrl}earth.png`,
       title: 'MEDIO AMBIENTE',
       description:
         'Todos los edificios municipales se encuentran abiertos en los horarios normales de funcionamiento',
