@@ -1,9 +1,11 @@
 import React from 'react'
-import './styles.sass'
-
+import Title from '../../../components/Title'
+import MainNews from '../../../components/News/MainNews'
+import SecondaryNews from '../../../components/News/SecondaryNews'
+import ViewMoreButton from '../../../components/ViewMoreButton'
+import styles from './styles.module.sass'
 import { List, Icon } from 'antd'
-import Title from 'components/Title'
-import ViewMoreButton from 'components/ViewMoreButton'
+
 const News: React.FC = () => {
   const news: any[] = [
     {
@@ -26,6 +28,8 @@ const News: React.FC = () => {
       <img
         className='newsImg'
         src='https://rancagua.cl/plataforma/upload/fotos/389785d677ac78a18cedff122c8ec816.jpg'
+        alt={news[0].title}
+        style={{ maxWidth: '100%' }}
       />
       <List
         className='news-list'
