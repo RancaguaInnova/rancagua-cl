@@ -29,6 +29,7 @@ const News: React.FC = () => {
         className='newsImg'
         src='https://rancagua.cl/plataforma/upload/fotos/389785d677ac78a18cedff122c8ec816.jpg'
         alt={news[0].title}
+        style={{ maxWidth: '100%' }}
       />
       <List
         className='news-list'
