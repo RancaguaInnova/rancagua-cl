@@ -44,7 +44,7 @@ const Procedures: React.FC = () => {
         renderItem={item => (
           <List.Item actions={[<Icon type='right' />]}>
             <List.Item.Meta
-              avatar={<Avatar src={item.icon} />}
+              avatar={<Avatar size='large' src={item.icon} />}
               title={<a href={item.link}>{item.title}</a>}
             />
           </List.Item>

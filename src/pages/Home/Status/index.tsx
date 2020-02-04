@@ -75,7 +75,7 @@ const Status: React.FC = () => {
           renderItem={item => (
             <List.Item>
               <List.Item.Meta
-                avatar={<Avatar src={item.icon} />}
+                avatar={<Avatar size={60} src={item.icon} />}
                 title={<a href={item.link}>{item.title}</a>}
                 description={item.description}
               />
