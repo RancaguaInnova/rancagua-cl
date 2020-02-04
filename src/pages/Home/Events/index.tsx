@@ -3,7 +3,7 @@ import Title from 'components/Title'
 import DateSubscriber from 'components/Events/DateSubscriber'
 import DataRow from 'components/Events/DataRow'
 import ViewMoreButton from 'components/ViewMoreButton'
-import { List, Icon, Typography, Divider } from 'antd'
+import { List, Icon } from 'antd'
 import styles from './styles.module.sass'
 
 const Events: React.FC = () => {

@@ -1,49 +1,90 @@
 import React from 'react'
-import Title from '../../../components/Title'
-import ViewMoreButton from '../../../components/ViewMoreButton'
-import styles from './styles.module.sass'
+import Title from 'components/Title'
+import DateSubscriber from 'components/Events/DateSubscriber'
+import DataRow from 'components/Events/DataRow'
+import ViewMoreButton from 'components/ViewMoreButton'
 import { List, Icon } from 'antd'
+import styles from './styles.module.sass'
 
-const News: React.FC = () => {
-  const news: any[] = [
+const Events: React.FC = () => {
+  const events = [
     {
-      title: 'Noticia 1',
-      description: 'Acá la descripción de la noticia',
-      link: '',
-      image: 'https://rancagua.cl/plataforma/upload/fotos/389785d677ac78a18cedff122c8ec816.jpg',
+      date: '2020-02-07',
+      time: '19:30',
+      title: 'Taller de Teoría y Solfeo',
+      description: 'Aprende teoría musica y solfeo. Mejora tu interpretación y lectura musical',
+      imageUrl: 'asdfasdfas',
+      address: { streetName: 'Centro Cultural Baquedano', streetNumber: '' },
+      externalUrl: 'https://google.cl',
+      isFree: true,
     },
     {
-      title: 'Noticia 2',
-      description: 'Acá la descripción de la noticia',
-      link: '',
-      image: 'https://rancagua.cl/plataforma/upload/fotos/389785d677ac78a18cedff122c8ec816.jpg',
+      date: '2020-02-20',
+      time: '16:00',
+      title: 'Taller Cultivando Nuestro Patrimonio Natural',
+      description: 'Aprende teoría musica y solfeo. Mejora tu interpretación y lectura musical',
+      imageUrl: 'asdfasdfas',
+      address: { streetName: 'Centro Ambiental', streetNumber: '' },
+      externalUrl: 'https://google.cl',
+      isFree: false,
+    },
+    {
+      date: '2020-03-08',
+      time: '20:30',
+      title: 'Tercera Corrida Familiar',
+      description: 'Aprende teoría musica y solfeo. Mejora tu interpretación y lectura musical',
+      imageUrl: 'asdfasdfas',
+      address: {
+        streetName: 'Centro Deportivo Patricio Mekis',
+        streetNumber: '',
+      },
+      externalUrl: 'https://google.cl',
+      isFree: true,
     },
   ]
 
   return (
-    <section className='section'>
-      <Title style={{ fontWeight: 'bold' }}>NOTICIAS</Title>
+    <section className={styles.events}>
+      <Title>NOTICIAS</Title>
+
       <img
-        className='newsImg'
+        className={styles.eventsImg}
         src='https://rancagua.cl/plataforma/upload/fotos/389785d677ac78a18cedff122c8ec816.jpg'
-        alt={news[0].title}
-        style={{ maxWidth: '100%' }}
+        alt={events[0].title}
       />
       <List
-        className='news-list'
-        dataSource={news}
+        className='eventsList'
+        dataSource={events}
         renderItem={item => (
           <List.Item actions={[<Icon type='right' />]}>
-            <List.Item.Meta
-              title={<a href={item.link}>{item.title}</a>}
-              description={item.description}
-            />
+            <a className={styles.linkItem} href={item.externalUrl}>
+              <List.Item.Meta
+                title={item.title}
+                description={
+                  <div className={styles.dataRows}>
+                    <DataRow
+                      icon='environment'
+                      theme='outlined'
+                      text={`${item.address.streetName}`}
+                    />
+                    <DataRow icon='clock-circle' theme='outlined' text={`${item.time}`} />
+                    <DataRow
+                      icon='dollar'
+                      theme='outlined'
+                      text={item.isFree ? 'Gratuito' : 'Pagado'}
+                    />
+                  </div>
+                }
+              />
+            </a>
           </List.Item>
         )}
       />
-      <ViewMoreButton text='Ver todas las noticias' />
+      <div className={styles.viewMore}>
+        <ViewMoreButton text='Ver todos los eventos' />
+      </div>
     </section>
   )
 }
 
-export default News
+export default Events
