@@ -3,7 +3,7 @@ import moment from 'moment'
 import Title from 'components/Title'
 import DataRow from 'components/Events/DataRow'
 import ViewMoreButton from 'components/ViewMoreButton'
-import { Divider, List, Icon, Typography } from 'antd'
+import { List, Icon, Typography } from 'antd'
 import styles from './styles.module.sass'
 
 const { Text } = Typography
