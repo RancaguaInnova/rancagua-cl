@@ -1,8 +1,9 @@
 import React from 'react'
+import moment from 'moment'
 import Title from 'components/Title'
 import DataRow from 'components/Events/DataRow'
 import ViewMoreButton from 'components/ViewMoreButton'
-import { List, Icon, Typography } from 'antd'
+import { Divider, List, Icon, Typography } from 'antd'
 import styles from './styles.module.sass'
 
 const { Text } = Typography
@@ -64,8 +65,14 @@ const News: React.FC = () => {
                 title={item.title}
                 description={
                   <div className={styles.dataRows}>
-                    <Text strong>{item.subtitle}</Text>
-                    <DataRow icon='calendar' theme='outlined' text={`${item.publishedAt}`} />
+                    <div className={styles.subtitle}>
+                      <Text strong>{item.subtitle}</Text>
+                    </div>
+                    <DataRow
+                      icon='calendar'
+                      theme='outlined'
+                      text={`${moment(item.publishedAt).format('DD-MM-YYYY')}`}
+                    />
                   </div>
                 }
               />

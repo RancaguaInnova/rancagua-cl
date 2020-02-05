@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row, Col, Icon, Avatar } from 'antd'
+import { Row, Col, Avatar } from 'antd'
 import Title from 'components/Title'
 import './styles.sass'
 
