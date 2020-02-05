@@ -81,7 +81,7 @@ const News: React.FC = () => {
         )}
       />
       <div className={styles.viewMore}>
-        <ViewMoreButton text='Ver todos los eventos' />
+        <ViewMoreButton text='Ver todas las noticias' />
       </div>
     </section>
   )
