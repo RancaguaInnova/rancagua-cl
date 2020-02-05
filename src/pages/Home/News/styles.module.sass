@@ -1,8 +1,45 @@
-@import "variables.sass"
+@import './../styles'
 
 .news
-  background-color: $sectionBackgroundColor
+  margin: 1rem 0
+  border-radius: 5px
+  @include homeSection
+
+  .newsImg
+    max-width: 100%
+    object-fit: cover
+
+  a
+    color: rgba(0, 0, 0, 0.65)
+
+  li
+    background-color: #fff !important
+    margin-bottom: 0.5rem
+    padding-left: 1rem
+
+  h4
+    text-align: left
+    color: #324995 !important
+    font-size: 1.2rem
+    width: 310px
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+
+  .ant-list-split
+    .ant-list-item
+      border-bottom: 8px solid $sectionBackgroundColor
+      padding: 4px
 
 .viewMore
-  margin: 1.5rem 0
+  width: 95%
+  margin: auto
+  padding-top: 1rem
   padding-bottom: 1.5rem
+
+.dataRows
+  text-align: left !important
+  width: 300px
+
+.subtitle
+  margin-bottom: 0.5rem
