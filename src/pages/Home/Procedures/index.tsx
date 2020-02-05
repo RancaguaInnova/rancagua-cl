@@ -1,35 +1,35 @@
 import React from 'react'
 import './styles.sass'
-import { List, Avatar, Icon } from 'antd'
 import Title from 'components/Title'
+import ItemsList, { Item } from 'components/ItemsList'
 import ViewMoreButton from 'components/ViewMoreButton'
 
 const Procedures: React.FC = () => {
   const iconUrl = '/assets/images/icons/'
-  const procedures = [
+  const procedures: Item[] = [
     {
       title: 'PAGOS',
-      icon: `${iconUrl}pay.png`,
+      avatar: { url: `${iconUrl}pay.png` },
       link: '',
     },
     {
       title: 'PATENTES',
-      icon: `${iconUrl}plate.png`,
+      avatar: { url: `${iconUrl}plate.png` },
       link: '',
     },
     {
       title: 'LICENCIA DE CONDUCIR',
-      icon: `${iconUrl}car.png`,
+      avatar: { url: `${iconUrl}car.png` },
       link: '',
     },
     {
       title: 'SOLICITUDES',
-      icon: `${iconUrl}requests.png`,
+      avatar: { url: `${iconUrl}requests.png` },
       link: '',
     },
     {
       title: 'CERTIFICADOS',
-      icon: `${iconUrl}document.png`,
+      avatar: { url: `${iconUrl}document.png` },
       link: '',
     },
   ]
@@ -38,18 +38,8 @@ const Procedures: React.FC = () => {
     <section className='section procedures'>
       <Title style={{ fontWeight: 'bold' }}>TRÁMITES</Title>
 
-      <List
-        className='procedures-list'
-        dataSource={procedures}
-        renderItem={item => (
-          <List.Item actions={[<Icon type='right' />]}>
-            <List.Item.Meta
-              avatar={<Avatar size='large' src={item.icon} />}
-              title={<a href={item.link}>{item.title}</a>}
-            />
-          </List.Item>
-        )}
-      />
+      <ItemsList items={procedures} />
+
       <ViewMoreButton text='Ver todos los Trámites' />
     </section>
   )

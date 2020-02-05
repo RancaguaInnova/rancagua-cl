@@ -1,35 +1,35 @@
 import React from 'react'
 import './styles.sass'
-import { List, Avatar, Icon } from 'antd'
 import Title from 'components/Title'
 import ViewMoreButton from 'components/ViewMoreButton'
+import ItemsList, { Item } from 'components/ItemsList'
 
 const Services: React.FC = () => {
   const iconUrl = '/assets/images/icons/'
-  const services = [
+  const services: Item[] = [
     {
       title: 'MAPAS',
-      icon: `${iconUrl}map.png`,
+      avatar: { url: `${iconUrl}map.png` },
       link: '',
     },
     {
       title: 'ORGANIZACIONES COMUNITARIAS',
-      icon: `${iconUrl}comunity.png`,
+      avatar: { url: `${iconUrl}comunity.png` },
       link: '',
     },
     {
       title: 'DECRETOS MUNICIPALES',
-      icon: `${iconUrl}document.png`,
+      avatar: { url: `${iconUrl}document.png` },
       link: '',
     },
     {
       title: 'TRANSPARENCIA',
-      icon: `${iconUrl}book.png`,
+      avatar: { url: `${iconUrl}book.png` },
       link: '',
     },
     {
       title: 'BOLSA DE EMPLEO',
-      icon: `${iconUrl}student.png`,
+      avatar: { url: `${iconUrl}student.png` },
       link: '',
     },
   ]
@@ -38,18 +38,7 @@ const Services: React.FC = () => {
     <section className='section services'>
       <Title>SERVICIOS</Title>
 
-      <List
-        className='services-list'
-        dataSource={services}
-        renderItem={item => (
-          <List.Item actions={[<Icon type='right' />]}>
-            <List.Item.Meta
-              avatar={<Avatar size='large' src={item.icon} />}
-              title={<a href={item.link}>{item.title}</a>}
-            />
-          </List.Item>
-        )}
-      />
+      <ItemsList items={services} />
 
       <ViewMoreButton text='Ver todos los Servicios' />
     </section>
