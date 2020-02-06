@@ -1,45 +1,42 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { ServicesContext } from 'core/providers/contexts/Services'
+import { ServiceElement } from 'core/services/Service'
 import './styles.sass'
 import Title from 'components/Title'
 import ViewMoreButton from 'components/ViewMoreButton'
 import ItemsList, { Item } from 'components/ItemsList'
 
+/**
+  Cast services array to items array type
+ */
+const serviceToItem = (services: ServiceElement[]): Item[] => {
+  return services.map(procedure => {
+    return {
+      id: procedure.id,
+      title: procedure.title,
+      link: procedure.link,
+      avatar: { url: procedure.icon },
+    }
+  })
+}
+
 const Services: React.FC = () => {
-  const iconUrl = '/assets/images/icons/'
-  const services: Item[] = [
-    {
-      title: 'MAPAS',
-      avatar: { url: `${iconUrl}map.png` },
-      link: '',
-    },
-    {
-      title: 'ORGANIZACIONES COMUNITARIAS',
-      avatar: { url: `${iconUrl}comunity.png` },
-      link: '',
-    },
-    {
-      title: 'DECRETOS MUNICIPALES',
-      avatar: { url: `${iconUrl}document.png` },
-      link: '',
-    },
-    {
-      title: 'TRANSPARENCIA',
-      avatar: { url: `${iconUrl}book.png` },
-      link: '',
-    },
-    {
-      title: 'BOLSA DE EMPLEO',
-      avatar: { url: `${iconUrl}student.png` },
-      link: '',
-    },
-  ]
+  const [services, setServices] = useState<Item[]>([])
+  const { Service } = useContext(ServicesContext)
+
+  useEffect(() => {
+    async function loadServices() {
+      const list: ServiceElement[] = await Service.list({ limit: 5 })
+      setServices(serviceToItem(list))
+    }
+
+    loadServices()
+  }, [])
 
   return (
     <section className='section services'>
       <Title>SERVICIOS</Title>
-
       <ItemsList items={services} />
-
       <ViewMoreButton text='Ver todos los Servicios' />
     </section>
   )

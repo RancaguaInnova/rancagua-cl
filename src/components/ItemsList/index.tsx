@@ -3,6 +3,7 @@ import styles from './styles.module.sass'
 import { List, Avatar, Icon } from 'antd'
 
 export type Item = {
+  id: string
   actions?: any[]
   avatar?: {
     url: string
@@ -13,6 +14,7 @@ export type Item = {
   title: string
   link: string
   description?: string
+  ranking?: number
 }
 
 type Props = {

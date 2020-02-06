@@ -2,6 +2,7 @@ import React, { Suspense, lazy, useState, useContext } from 'react'
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 import { Layout } from 'antd'
 import { MobileContextProvider, MobileContext } from 'core/providers/contexts/IsMobile'
+import { ServicesContextProvider } from 'core/providers/contexts/Services'
 import dotenv from 'dotenv'
 
 import './App.sass'
@@ -30,38 +31,40 @@ const App: React.FC = () => {
     <Router>
       <div className='App'>
         <Suspense fallback={<Loading />}>
-          <MobileContextProvider>
-            <Layout>
-              <Header isMobile={isMobile} />
-              <Content className={`content${isMobile ? '-mobile' : ''}`}>
-                <Switch>
-                  <Route path='/eventos'>
-                    <Events />
-                  </Route>
-                  <Route path='/noticias'>
-                    <News />
-                  </Route>
-                  <Route path='/servicios'>
-                    <Services />
-                  </Route>
-                  <Route path='/tramites'>
-                    <Procedures />
-                  </Route>
-                  <Route path='/' default>
-                    <Home />
-                  </Route>
-                </Switch>
-              </Content>
+          <ServicesContextProvider>
+            <MobileContextProvider>
+              <Layout>
+                <Header isMobile={isMobile} />
+                <Content className={`content${isMobile ? '-mobile' : ''}`}>
+                  <Switch>
+                    <Route path='/eventos'>
+                      <Events />
+                    </Route>
+                    <Route path='/noticias'>
+                      <News />
+                    </Route>
+                    <Route path='/servicios'>
+                      <Services />
+                    </Route>
+                    <Route path='/tramites'>
+                      <Procedures />
+                    </Route>
+                    <Route path='/' default>
+                      <Home />
+                    </Route>
+                  </Switch>
+                </Content>
 
-              {isMobile && (
-                <BottomTabs
-                  onHandleMenu={() => {
-                    setVisible(!visible)
-                  }}
-                />
-              )}
-            </Layout>
-          </MobileContextProvider>
+                {isMobile && (
+                  <BottomTabs
+                    onHandleMenu={() => {
+                      setVisible(!visible)
+                    }}
+                  />
+                )}
+              </Layout>
+            </MobileContextProvider>
+          </ServicesContextProvider>
         </Suspense>
       </div>
       <DrawerMenu
