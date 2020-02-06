@@ -1,49 +1,88 @@
 import React from 'react'
-import Title from '../../../components/Title'
-import MainNews from '../../../components/News/MainNews'
-import SecondaryNews from '../../../components/News/SecondaryNews'
-import ViewMoreButton from '../../../components/ViewMoreButton'
+import moment from 'moment'
+import Title from 'components/Title'
+import DataRow from 'components/Events/DataRow'
+import ViewMoreButton from 'components/ViewMoreButton'
+import { List, Icon, Typography } from 'antd'
 import styles from './styles.module.sass'
-import { List, Icon } from 'antd'
+
+const { Text } = Typography
 
 const News: React.FC = () => {
-  const news: any[] = [
+  const news = [
     {
-      title: 'Noticia 1',
-      description: 'Acá la descripción de la noticia',
-      link: '',
-      image: 'https://rancagua.cl/plataforma/upload/fotos/389785d677ac78a18cedff122c8ec816.jpg',
+      id: 'afs24fasdf24f',
+      title: 'Rancagua primera ciudad con PWA',
+      subtitle: 'Rancagua lidera el uso de tecnologías en la interacción con los ciudadanos.',
+      body: 'Rancagua lidera el uso de tecnologías. Rancagua primera ciudad con PWA',
+      publishedAt: '2020-02-07',
+      departmentId: 'fDadfWb32',
+      tags: ['tecnología', 'internet'],
+      imageUrl: 'https://rancagua.cl/plataforma/upload/fotos/389785d677ac78a18cedff122c8ec816.jpg',
+      externalUrl: 'https://google.cl',
     },
     {
-      title: 'Noticia 2',
-      description: 'Acá la descripción de la noticia',
-      link: '',
-      image: 'https://rancagua.cl/plataforma/upload/fotos/389785d677ac78a18cedff122c8ec816.jpg',
+      id: 'afs24fasdf24f',
+      title: 'Rancagua entrega noticias',
+      subtitle:
+        'A través de esta sección te enterarás de todo lo que ocurre en la comuna de Rancagua.',
+      body: 'Rancagua entrega noticias: A través de esta sección te enterarás de todo',
+      publishedAt: '2020-02-14',
+      departmentId: 'dsCwRG0148',
+      imageUrl: 'https://rancagua.cl/plataforma/upload/fotos/389785d677ac78a18cedff122c8ec816.jpg',
+      tags: ['noticias', 'actualidad'],
+      externalUrl: 'https://google.cl',
+    },
+    {
+      id: 'afs24fasdf24f',
+      title: 'Rancagua entrega noticias',
+      subtitle: 'A través de esta sección te enterarás de todo',
+      body: 'Rancagua entrega noticias: A través de esta sección te enterarás de todo',
+      publishedAt: '2020-02-14',
+      departmentId: 'dsCwRG0148',
+      imageUrl: 'https://rancagua.cl/plataforma/upload/fotos/389785d677ac78a18cedff122c8ec816.jpg',
+      tags: ['noticias', 'actualidad'],
+      externalUrl: 'https://google.cl',
     },
   ]
 
   return (
-    <section className='section'>
-      <Title style={{ fontWeight: 'bold' }}>NOTICIAS</Title>
+    <section className={styles.news}>
+      <Title>NOTICIAS</Title>
+
       <img
-        className='newsImg'
+        className={styles.newsImg}
         src='https://rancagua.cl/plataforma/upload/fotos/389785d677ac78a18cedff122c8ec816.jpg'
         alt={news[0].title}
-        style={{ maxWidth: '100%' }}
       />
       <List
-        className='news-list'
+        className='newsList'
         dataSource={news}
         renderItem={item => (
           <List.Item actions={[<Icon type='right' />]}>
-            <List.Item.Meta
-              title={<a href={item.link}>{item.title}</a>}
-              description={item.description}
-            />
+            <a className={styles.linkItem} href={item.externalUrl}>
+              <List.Item.Meta
+                title={item.title}
+                description={
+                  <div className={styles.dataRows}>
+                    <div className={styles.subtitle}>
+                      <Text strong>{item.subtitle}</Text>
+                    </div>
+                    <DataRow
+                      icon='calendar'
+                      theme='outlined'
+                      text={`${moment(item.publishedAt).format('DD-MM-YYYY')}`}
+                    />
+                  </div>
+                }
+              />
+            </a>
           </List.Item>
         )}
       />
-      <ViewMoreButton text='Ver todas las noticias' />
+      <div className={styles.viewMore}>
+        <ViewMoreButton text='Ver todas las noticias' />
+      </div>
     </section>
   )
 }
