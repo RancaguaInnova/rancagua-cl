@@ -5,9 +5,8 @@ import { ProcedureElement } from 'core/services/Procedure'
 
 import Title from 'components/Title'
 import ItemsList, { Item } from 'components/ItemsList'
-import ViewMoreButton from 'components/ViewMoreButton'
 
-import './styles.sass'
+import styles from './styles.module.sass'
 
 /**
   Cast procedures array to items array type
@@ -33,9 +32,9 @@ const Services: React.FC = () => {
     }
 
     loadProcedures()
-  }, [])
+  }, [Procedure])
   return (
-    <section className='section procedures'>
+    <section className={`section ${styles.procedures}`}>
       <Title style={{ fontWeight: 'bold' }}>TRÁMITES</Title>
       <ItemsList items={procedures} />
     </section>

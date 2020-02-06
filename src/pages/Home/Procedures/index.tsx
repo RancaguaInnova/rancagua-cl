@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import { ServicesContext } from 'core/providers/contexts/Services'
 import { ProcedureElement } from 'core/services/Procedure'
 
@@ -11,8 +12,11 @@ import ViewMoreButton from 'components/ViewMoreButton'
 import styles from './styles.module.sass'
 
 const Procedures: React.FC = () => {
+  const history = useHistory()
   const [procedures, setProcedures] = useState<Item[]>([])
   const { Procedure } = useContext(ServicesContext)
+
+  // On load
   useEffect(() => {
     async function loadProcedures() {
       const list: ProcedureElement[] = await Procedure.list({ limit: 5 })
@@ -20,13 +24,18 @@ const Procedures: React.FC = () => {
     }
 
     loadProcedures()
-  }, [])
+  }, [Procedure])
 
   return (
     <section className={`section ${styles.procedures}`}>
       <Title style={{ fontWeight: 'bold' }}>TRÁMITES</Title>
       <ItemsList items={procedures} />
-      <ViewMoreButton text='Ver todos los Trámites' />
+      <ViewMoreButton
+        text='Ver todos los Trámites'
+        onClick={() => {
+          history.push('/tramites')
+        }}
+      />
     </section>
   )
 }

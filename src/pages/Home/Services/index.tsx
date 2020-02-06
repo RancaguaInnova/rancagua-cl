@@ -24,6 +24,7 @@ const Services: React.FC = () => {
   const [services, setServices] = useState<Item[]>([])
   const { Service } = useContext(ServicesContext)
 
+  // On load
   useEffect(() => {
     async function loadServices() {
       const list: ServiceElement[] = await Service.list({ limit: 5 })
@@ -31,7 +32,7 @@ const Services: React.FC = () => {
     }
 
     loadServices()
-  }, [])
+  }, [Service])
 
   return (
     <section className={`section ${styles.services}`}>
