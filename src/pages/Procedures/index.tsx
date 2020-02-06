@@ -7,7 +7,7 @@ import Title from 'components/Title'
 import ItemsList, { Item } from 'components/ItemsList'
 import ViewMoreButton from 'components/ViewMoreButton'
 
-import './styles.css'
+import './styles.sass'
 
 /**
   Cast procedures array to items array type

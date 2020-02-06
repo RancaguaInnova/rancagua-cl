@@ -8,7 +8,7 @@ import Title from 'components/Title'
 import ItemsList, { Item } from 'components/ItemsList'
 import ViewMoreButton from 'components/ViewMoreButton'
 
-import './styles.sass'
+import styles from './styles.module.sass'
 
 const Procedures: React.FC = () => {
   const [procedures, setProcedures] = useState<Item[]>([])
@@ -23,7 +23,7 @@ const Procedures: React.FC = () => {
   }, [])
 
   return (
-    <section className='section procedures'>
+    <section className={`section ${styles.procedures}`}>
       <Title style={{ fontWeight: 'bold' }}>TRÁMITES</Title>
       <ItemsList items={procedures} />
       <ViewMoreButton text='Ver todos los Trámites' />

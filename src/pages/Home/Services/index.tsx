@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { ServicesContext } from 'core/providers/contexts/Services'
 import { ServiceElement } from 'core/services/Service'
-import './styles.sass'
+import styles from './styles.module.sass'
 import Title from 'components/Title'
 import ViewMoreButton from 'components/ViewMoreButton'
 import ItemsList, { Item } from 'components/ItemsList'
@@ -34,7 +34,7 @@ const Services: React.FC = () => {
   }, [])
 
   return (
-    <section className='section services'>
+    <section className={`section ${styles.services}`}>
       <Title>SERVICIOS</Title>
       <ItemsList items={services} />
       <ViewMoreButton text='Ver todos los Servicios' />
