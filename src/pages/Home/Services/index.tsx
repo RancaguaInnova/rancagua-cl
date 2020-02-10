@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import { ServicesContext } from 'core/providers/contexts/Services'
 import { ServiceElement } from 'core/services/Service'
 import styles from './styles.module.sass'
@@ -21,6 +22,7 @@ const serviceToItem = (services: ServiceElement[]): Item[] => {
 }
 
 const Services: React.FC = () => {
+  const history = useHistory()
   const [services, setServices] = useState<Item[]>([])
   const { Service } = useContext(ServicesContext)
 
@@ -38,7 +40,12 @@ const Services: React.FC = () => {
     <section className={`section ${styles.services}`}>
       <Title>SERVICIOS</Title>
       <ItemsList items={services} />
-      <ViewMoreButton text='Ver todos los Servicios' />
+      <ViewMoreButton
+        text='Ver todos los Servicios'
+        onClick={() => {
+          history.push('/servicios')
+        }}
+      />
     </section>
   )
 }

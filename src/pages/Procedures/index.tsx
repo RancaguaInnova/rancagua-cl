@@ -22,7 +22,7 @@ export const procedureToItem = (procedures: ProcedureElement[]): Item[] => {
   })
 }
 
-const Services: React.FC = () => {
+const Procedures: React.FC = () => {
   const [procedures, setProcedures] = useState<Item[]>([])
   const { Procedure } = useContext(ServicesContext)
   useEffect(() => {
@@ -41,4 +41,4 @@ const Services: React.FC = () => {
   )
 }
 
-export default Services
+export default Procedures
