@@ -1,5 +1,5 @@
 import React from 'react'
-import { List, Avatar } from 'antd'
+import { List, Avatar, Badge, Icon } from 'antd'
 import moment from 'moment'
 import 'moment/locale/es'
 import './styles.sass'
@@ -33,7 +33,7 @@ const Status: React.FC = () => {
       icon: `${iconUrl}traffic.png`,
       title: 'SEMÁFOROS',
       description: 'Algunos semáforos se encuentran con problemas',
-      warning: false,
+      warning: true,
       link: '',
     },
     {
@@ -75,7 +75,18 @@ const Status: React.FC = () => {
           renderItem={item => (
             <List.Item>
               <List.Item.Meta
-                avatar={<Avatar size={60} src={item.icon} />}
+                avatar={
+                  <div>
+                    <Avatar size={60} src={item.icon} />
+                    {item.warning && (
+                      <Badge
+                        count={
+                          <Icon type='exclamation-circle' theme='filled' className='badge-icon' />
+                        }
+                      />
+                    )}
+                  </div>
+                }
                 title={<a href={item.link}>{item.title}</a>}
                 description={item.description}
               />
@@ -83,11 +94,13 @@ const Status: React.FC = () => {
           )}
         />
       </section>
-      <div className='warning-msg'>
-        <h3>{warningAlert.title}</h3>
-        <p>{warningAlert.subtitle}</p>
-        <p className='detail'>{warningAlert.detail}</p>
-      </div>
+      {warningAlert && (
+        <div className='warning-msg'>
+          <h3>{warningAlert.title}</h3>
+          <p>{warningAlert.subtitle}</p>
+          <p className='detail'>{warningAlert.detail}</p>
+        </div>
+      )}
     </div>
   )
 }
