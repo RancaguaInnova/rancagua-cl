@@ -1,8 +1,12 @@
 import React from 'react'
-import './styles.css'
+import './styles.sass'
 
 const Loading: React.FC = () => {
-  return <div className='Loading'>Hola soy el Loading</div>
+    return (
+        <div className='loading'>
+            <img src='/assets/images/loading.gif' />
+        </div>
+    )
 }
 
 export default Loading

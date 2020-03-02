@@ -46,7 +46,7 @@ const servicesList: ServiceElement[] = [
         id: '1',
         title: 'MAPAS',
         icon: '/assets/images/icons/map.png',
-        link: '',
+        link: '/servicios/mapas',
         ranking: 1
     },
     {
