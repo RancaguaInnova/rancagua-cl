@@ -24,12 +24,13 @@ type Props = {
 }
 
 const ItemsList: React.FC<Props> = ({ items, style = {} }) => {
+    console.log('style', style)
     const defaultActions = [ <Icon type='right' /> ]
     return (
         <div className={styles.listContainer}>
             <List
                 style={style}
-                className={styles.itemsList}
+                className={`${styles.itemsList} ${style.list}`}
                 dataSource={items}
                 renderItem={(item: Item) => {
                     // Actions
@@ -53,11 +54,11 @@ const ItemsList: React.FC<Props> = ({ items, style = {} }) => {
 
                     return (
                         <Link to={item.link}>
-                            <List.Item actions={actions} className={styles.listItem}>
+                            <List.Item actions={actions} className={`${styles.listItem} ${style.listItem}`}>
                                 <List.Item.Meta
-                                    className={styles.meta}
+                                    className={`${styles.meta} ${style.meta}`}
                                     avatar={avatar}
-                                    title={<p className={styles.metaTitle}>{item.title}</p>}
+                                    title={<p className={`${styles.metaTitle} ${style.metaTitle}`}>{item.title}</p>}
                                     description={description}
                                 />
                             </List.Item>
