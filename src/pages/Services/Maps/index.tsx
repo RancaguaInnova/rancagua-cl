@@ -1,12 +1,22 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
+import { Route, Switch } from 'react-router-dom'
+
 import { Breadcrumb } from 'antd'
 import { Link } from 'react-router-dom'
+
+import Loading from 'components/Loading'
 import Title from 'components/Title'
 import ItemsList, { Item } from 'components/ItemsList'
 import styles from './styles.module.sass'
+
+const BASE_PATH = '/servicios/mapas'
+
+// Sub Pages
+const GarbageCollector = lazy(() => import('./GarbageCollector'))
+const Parking = lazy(() => import('./Parking'))
 const Maps: React.FC = () => {
-    return (
-        <section className={`section ${styles.maps}`}>
+    const mapList = (
+        <div>
             <Title style={{ fontWeight: 'bold' }}>MAPAS</Title>
             <Breadcrumb>
                 <Breadcrumb.Item>
@@ -20,8 +30,25 @@ const Maps: React.FC = () => {
             <div className={styles.list}>
                 <ItemsList items={maps} style={{ metaTitle: styles.metaTitle, meta: styles.meta }} />
             </div>
-            {/* <div>aca el listado de mapas</div> */}
-        </section>
+        </div>
+    )
+
+    return (
+        <div>
+            <Suspense fallback={<Loading />}>
+                <Switch>
+                    <Route path={`${BASE_PATH}/basura`}>
+                        <GarbageCollector />
+                    </Route>
+                    <Route path={`${BASE_PATH}/estacionamientos`}>
+                        <Parking />
+                    </Route>
+                    <Route path={BASE_PATH} default>
+                        {mapList}
+                    </Route>
+                </Switch>
+            </Suspense>
+        </div>
     )
 }
 
@@ -32,7 +59,14 @@ const maps = [
         id: '',
         title: 'Recolección de Basura',
         description: 'Mapa en tiempo real con la ubicación de los camiones de basura domiciliaria',
-        link: '',
+        link: '/servicios/mapas/basura',
+        avatar: { url: '/assets/images/icons/garbage-collector.png' }
+    },
+    {
+        id: '',
+        title: 'Estacionamientos públicos',
+        description: 'Mapa en tiempo real de estacionamientos públicos disponibles en el centro de la ciudad',
+        link: '/servicios/mapas/estacionamientos',
         avatar: { url: '/assets/images/icons/garbage-collector.png' }
     },
     {

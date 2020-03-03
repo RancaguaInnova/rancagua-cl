@@ -1,18 +1,17 @@
 import React, { lazy, Suspense, useContext, useEffect, useState } from 'react'
 import { Route, Switch } from 'react-router-dom'
-import Loading from 'components/Loading'
+
 import { ServicesContext } from 'core/providers/contexts/Services'
 import { ServiceElement } from 'core/services/Service'
 
 import Title from 'components/Title'
 import ItemsList, { Item } from 'components/ItemsList'
-
+import Loading from 'components/Loading'
 import styles from './styles.module.sass'
 
 const BASE_PATH = '/servicios'
 
 // Sub Pages
-
 const Maps = lazy(() => import('./Maps'))
 
 /**
